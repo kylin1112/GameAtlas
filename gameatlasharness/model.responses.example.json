@@ -1,0 +1,17 @@
+{
+  "tasks_dir": "tasks",
+  "output": "runs/my-model",
+  "base_url": "https://your-provider.example/v1",
+  "model": "gpt-6.1-sol",
+  "api_key_env": "OPENAI_API_KEY",
+  "concurrency": 4,
+  "context_window": 262144,
+  "max_tokens": 65536,
+  "thinking": "xhigh",
+  "vision": true,
+  "api": "openai-responses",
+  "auth_header": "api-key",
+  "tasks": [
+    "psd-banner-bridge-v1"
+  ]
+}
