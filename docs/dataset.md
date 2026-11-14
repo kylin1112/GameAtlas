@@ -1,6 +1,6 @@
 # Download task packages
 
-The private candidate dataset is [GameDevBenchProTeam/GameAtlas](https://huggingface.co/datasets/GameDevBenchProTeam/GameAtlas). It contains benchmark inputs and verifiers. The separate model-results dataset holds evaluation runs.
+The private frozen dataset is [GameDevBenchProTeam/GameAtlas](https://huggingface.co/datasets/GameDevBenchProTeam/GameAtlas). It contains benchmark inputs and verifiers. The separate model-results dataset holds evaluation runs.
 
 From the GameAtlas clone, install the download client and authenticate with an account that can read the dataset:
 
@@ -19,3 +19,7 @@ Each directory under `tasks/` is one task. `task.toml` defines its environment, 
 The candidate includes 89 single-stage tasks and two four-stage Sponza tasks. Each multi-stage task counts once in the 91-task benchmark. Task files remain on the host; use the harness to expose the prescribed workspace to the agent.
 
 To run all 91 tasks, download the entire collection and remove the example’s single-task `tasks` list from your run configuration. Automatic discovery only sees task packages present locally.
+
+## Release alignment
+
+The lock pins the frozen 91-task collection plus the UV-010 padding candidate-memory fix used for rescoring. It records the source commit, immutable Hugging Face revision and manifest SHA-256. The harness matches the standalone `opensource` harness, with only the `gameatlasharness` package name and HF download entry point adapted. Repositories remain private during release preparation.

@@ -6,7 +6,7 @@ OpenAI-compatible Chat Completions endpoint**. No internal platform is required.
 
 ## 1. Check the task
 
-Download the [task packages](../docs/dataset.md) into `tasks/`, then check the host:
+Download the [pinned task packages](../docs/dataset.md) into `tasks/`, then check Docker:
 
 ```bash
 python3 --version
@@ -17,6 +17,11 @@ The runner builds Linux AMD64 images. Use an AMD64 machine or configure AMD64
 emulation on your Docker host. For a first run, select `psd-banner-bridge-v1`.
 Docker needs capacity for the work container, scoring container and relay
 overhead. Start with concurrency 1; do not silently reduce task resource limits.
+For the PSD example below, preflight requires at least 14 GiB available to the
+Docker engine (16 GiB is a practical setting), including its 10% safety margin.
+On Docker Desktop, check the engine's memory allocation, not just host RAM.
+Other tasks and higher concurrency may require more memory; preflight checks
+the selected tasks' frozen limits.
 
 ## 2. Configure your model
 

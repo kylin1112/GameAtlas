@@ -8,7 +8,7 @@ GameAtlas evaluates whether an agent can turn a game development brief into an e
 
 ## Task collection
 
-The candidate collection contains **91 tasks**. Task selection and score calibration are under review.
+The frozen collection contains **91 tasks**. Task packages and the UV-010 padding fix are pinned in `docs/dataset-lock.json`; model evaluation is ongoing.
 
 | Task family | Tasks | What the agent delivers |
 | --- | ---: | --- |
