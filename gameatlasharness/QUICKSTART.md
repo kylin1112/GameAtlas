@@ -20,8 +20,11 @@ overhead. Start with concurrency 1; do not silently reduce task resource limits.
 For the PSD example below, preflight requires at least 14 GiB available to the
 Docker engine (16 GiB is a practical setting), including its 10% safety margin.
 On Docker Desktop, check the engine's memory allocation, not just host RAM.
-Other tasks and higher concurrency may require more memory; preflight checks
-the selected tasks' frozen limits.
+This is only the PSD example's requirement, not a budget for the full collection.
+For example, UV-010 reserves 16 GiB for work and 64 GiB for scoring; with
+overhead and the same safety margin, preflight requires about 90 GiB.
+Higher concurrency adds the selected tasks' reservations. Preflight checks
+the selected tasks' frozen limits; it does not lower them automatically.
 
 ## 2. Configure your model
 
