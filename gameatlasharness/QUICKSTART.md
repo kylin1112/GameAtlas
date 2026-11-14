@@ -15,16 +15,16 @@ docker info
 
 The runner builds Linux AMD64 images. Use an AMD64 machine or configure AMD64
 emulation on your Docker host. For a first run, select `psd-banner-bridge-v1`.
-Docker needs capacity for the work container, scoring container and relay
-overhead. Start with concurrency 1; do not silently reduce task resource limits.
-For the PSD example below, preflight requires at least 14 GiB available to the
-Docker engine (16 GiB is a practical setting), including its 10% safety margin.
-On Docker Desktop, check the engine's memory allocation, not just host RAM.
-This is only the PSD example's requirement, not a budget for the full collection.
-For example, UV-010 reserves 16 GiB for work and 64 GiB for scoring; with
-overhead and the same safety margin, preflight requires about 90 GiB.
-Higher concurrency adds the selected tasks' reservations. Preflight checks
-the selected tasks' frozen limits; it does not lower them automatically.
+The frozen evaluation profile assigns every task 2 CPUs / 4 GiB to work and
+4 CPUs / 8 GiB to scoring. Budget about 1 GiB extra per concurrent task for
+support services (4 + 8 + 1 GiB). These are configured limits, not measured
+peak usage. Do not use the older per-task source defaults.
+
+The standalone harness currently checks 4 GiB + 8 GiB + 512 MiB per task,
+with a 10% Docker memory safety margin, so concurrency 1 requires at least
+13.9 GiB assigned to the Docker engine. Allocating 16 GiB is a convenient
+local setting, not an additional task limit. Higher concurrency requires
+more memory. Docker Desktop's engine allocation can be lower than host RAM.
 
 ## 2. Configure your model
 

@@ -1,9 +1,9 @@
 {
   "repo": "GameDevBenchProTeam/GameAtlas",
-  "revision": "801dd343c7eb48273fb75ad57b09d39a3e1f8044",
+  "revision": "f20fc930bc3ac827104b66f34ae274ec639cb834",
   "source_commit": "2f2aa3f93fd01e92e420f63cad20c2ec6841acba",
   "tasks": 91,
-  "manifest_sha256": "f1375626a7ab45080f688d5b5e495d24b075f558f53c3b25cbf8436362cb5084",
+  "manifest_sha256": "0802ada9ac2844f7f14201184c3cdcba4c5e013e7d8a6a09154edf4336e7ba5d",
   "executables": [
     "tasks/animation-expert-01-v1/tests/test.sh",
     "tasks/animation-expert-04-v1/tests/test.sh",
@@ -259,5 +259,6 @@
     "tasks/threejs-beautiful-game-render-repair/environment/submit_score.py",
     "tasks/threejs-beautiful-game-render-repair/tests/autoresearch_apply.py",
     "tasks/threejs-beautiful-game-render-repair/tests/autoresearch_score.py"
-  ]
+  ],
+  "runtime_profile": "freeze-e97b1efe: work 4096 MiB, scoring 8192 MiB; CPU limits from running task snapshots"
 }
